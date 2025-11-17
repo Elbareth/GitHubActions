@@ -24,4 +24,12 @@ jobs:
       - name: Show OS
         run: |
           echo "This job is running on a MacOS runner."  
-          echo "${RUNNER_OS} and ${{runner.os}}"              
+          echo "${RUNNER_OS} and ${{runner.os}}"   
+  swlf-hosted-echo:
+    runs-on: self-hosted
+    steps:
+      - name: Show OS
+        run: |
+          echo "This job is running my own runner"  
+          echo "${RUNNER_OS} and ${{runner.os}}"                
+               
