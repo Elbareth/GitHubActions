@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Show the trigger
         run: |
-          echo "Event name: ${{ github.event_name }}"
+          echo "Event name: ${{ github.event_name }} and ${GITHUB_EVENT_NAME} is our environment variable and will be calculated later"
