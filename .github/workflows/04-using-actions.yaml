@@ -1,0 +1,13 @@
+name: 04 – Workflow uses Actions
+on: 
+  #push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses:  actions/checkout@3 
+      - name: Printing Folders
+        run: ls -la         
+               
