@@ -22,3 +22,5 @@ jobs:
         run: |
           npm -v
           node -v    
+      - name: Run test
+        run: npm run test    
