@@ -6,8 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     defaults:
-      shell: bash
-      working_directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/react-app
+      run: 
+        shell: bash
+        working_directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/react-app
     steps:
       - name: Checkout Code
         uses:  actions/checkout@v3 
