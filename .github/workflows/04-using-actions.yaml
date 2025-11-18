@@ -5,9 +5,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      shell: bash
+      working_directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/react-app
     steps:
       - name: Checkout Code
         uses:  actions/checkout@v3 
       - name: Printing Folders
         run: ls -la         
-               
+      - name: Setup node          
+        uses:  actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Check version nodejs
+        run: |
+          npm -v
+          node -v    
