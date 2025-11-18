@@ -8,7 +8,7 @@ jobs:
     defaults:
       run: 
         shell: bash
-        working_directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/react-app
+        working-directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/react-app
     steps:
       - name: Checkout Code
         uses:  actions/checkout@v3 
