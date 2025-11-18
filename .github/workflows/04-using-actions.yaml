@@ -37,6 +37,7 @@ jobs:
         uses: docker/setup-buildx-action@v3 
       - name: Build Docker Image
         run: |
+          ls -la
           set -eux
           IMAGE_TAG=my-nginx:${GITHUB_SHA}
           docker build -t "${IMAGE_TAG}" .
