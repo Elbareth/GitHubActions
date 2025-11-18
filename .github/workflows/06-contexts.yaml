@@ -20,6 +20,7 @@ jobs:
         run: |
          echo ${{vars.MY_VAR}}   
          echo ${{env.MY_LOCAL_VAR}}  
+         echo ${{secrets.MY_SECRET}}
   echo-data-dev:
     runs-on: ubuntu-latest
     environment: DEV
@@ -39,4 +40,5 @@ jobs:
         run: |
          echo ${{vars.MY_VAR}}   
          echo ${{env.MY_LOCAL_VAR}}  
+         echo ${{secrets.MY_SECRET}}
       
