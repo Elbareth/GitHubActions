@@ -14,14 +14,14 @@ jobs:
         required: true
     steps:
       - name: Print start-up data
-        if: ${{inputes.debug == true}}
+        if: ${{inputs.debug == true}}
         run: |
           echo Triggered by: ${{github.action}}
           echo Branch: ${{github.ref}}
           echo Commit ${{github.sha}}
           echo Runner OS: ${{runner.os}}
       - name: Print when triggered from main
-        if: ${{ (inputes.debug == true) && (github.ref_name == 'main')}}
+        if: ${{ (inputs.debug == true) && (github.ref_name == 'main')}}
         run: echo "I was triggered from main"
       - name: Greeting
         run: echo "Hello, world"
