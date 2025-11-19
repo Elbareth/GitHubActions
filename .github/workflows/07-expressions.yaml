@@ -2,16 +2,16 @@ name: 07 – Using Expressions
 
 on:
   workflow_dispatch:
-
-jobs:
-  echo:
-    runs-on: ubuntu-latest
     inputs:
       debug:
         description: "Is debug?"
         type: boolean
         default: true
         required: true
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest    
     steps:
       - name: Print start-up data
         if: ${{inputs.debug == true}}
