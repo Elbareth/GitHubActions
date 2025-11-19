@@ -196,4 +196,4 @@
 
 7: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository
 
-NEW LINE IN README
+[NEW LINE IN README](https://github.com/TheRealMamuth/work-jsystems-github-actions-examples-public-tasks/blob/main/CWICZENIA/06-context/CW06_04.md)
