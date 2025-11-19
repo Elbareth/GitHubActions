@@ -1,12 +1,12 @@
 name: 06 – Contexts - Weather
 on: 
   workflow_dispatch:
-  inputs:
-      city:
-        description: "Miasto"
-        type: string
-        default: 'Warsaw'
-        required: true
+    inputs:
+        city:
+          description: "Miasto"
+          type: string
+          default: 'Warsaw'
+          required: true
 jobs:
   echo-data:
     runs-on: ubuntu-latest
