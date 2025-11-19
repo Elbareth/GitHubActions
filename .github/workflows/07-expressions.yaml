@@ -1,0 +1,28 @@
+name: 07 – Using Expressions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    inputs:
+      debug:
+        description: "Is debug?"
+        type: boolean
+        default: true
+        required: true
+    steps:
+      - name: Print start-up data
+        if: ${{inputes.debug == true}}
+        run: |
+          echo Triggered by: ${{github.action}}
+          echo Branch: ${{github.ref}}
+          echo Commit ${{github.sha}}
+          echo Runner OS: ${{runner.os}}
+      - name: Print when triggered from main
+        if: ${{ (inputes.debug == true) && (github.ref_name == 'main')}}
+        run: echo "I was triggered from main"
+      - name: Greeting
+        run: echo "Hello, world"
+
