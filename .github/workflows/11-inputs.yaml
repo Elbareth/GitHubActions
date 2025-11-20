@@ -15,7 +15,10 @@ on:
       tag:
         description: "Wydanie, z którego ma nastąpić budowa i wdrożenie"
         type: choice
-        matrix: [v1, v2, v3]
+        options:
+          - v1
+          - v2
+          - v3
         default: v3
         required: true        
 
