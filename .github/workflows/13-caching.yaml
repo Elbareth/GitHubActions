@@ -21,7 +21,7 @@ jobs:
     outputs:
       cache-hit: ${{ steps.build.outputs.cache-hit }}
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         working-directory: ./CWICZENIA/13-caching/react-app
     steps:
