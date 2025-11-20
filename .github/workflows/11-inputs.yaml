@@ -8,11 +8,11 @@ on:
         type: boolean
         default: false
         required: true
-    target:
+      target:
         description: "Które środowisko ma być celem workflow"
         type: environment
         required: true    
-    tag:
+      tag:
         description: "Wydanie, z którego ma nastąpić budowa i wdrożenie"
         type: choice
         matrix: [v1, v2, v3]
@@ -23,7 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
+      - name: Build 
         run: echo Budowanie z tagu ${{inputs.tag}}
   deploy:
     runs-on: ubuntu-latest
