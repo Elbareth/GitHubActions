@@ -1,0 +1,34 @@
+name: 11 – Working with Inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Pomiń wdrożenie i wyświetl jedynie wynik budowania"
+        type: boolean
+        default: false
+        required: true
+    target:
+        description: "Które środowisko ma być celem workflow"
+        type: environment
+        required: true    
+    tag:
+        description: "Wydanie, z którego ma nastąpić budowa i wdrożenie"
+        type: choice
+        matrix: [v1, v2, v3]
+        default: v3
+        required: true        
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: echo Budowanie z tagu ${{inputs.tag}}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{inputs.dry-run == false}}
+    steps:
+      - name: Build
+        run: echo Wdrażanie do ${{inputs.target}} 
