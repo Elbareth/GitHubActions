@@ -19,7 +19,7 @@ on:
 jobs:
   build:
     outputs:
-      cache-hit: ${{ steps.build.outputs.cache-hit }}
+      deps-cache-key: ${{ steps.cache-key.outputs.CACHE_KEY }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: ${{inputs.node-version}}
       - name: Set up cache
-        run: cache-hit = deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }} >> $GITHUB_OUTPUT     
+        run: echo "CACHE_KEY=deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}" >> "$GITHUB_OUTPUT"
       - name: Download cached dependencies
         id: cache    
         if: ${{inputs.use-caches == true}}
@@ -41,7 +41,7 @@ jobs:
           key: ${{steps.build.outputs.cache-hit}}
           path: ./CWICZENIA/13-caching/react-app/node_modules
       - name:  Install dependencies
-        if: ${{steps.build.outputs.cache-hit == false}}
+        if: ${{steps.cache-key.outputs.CACHE_KEY == false}}
         run: npm ci
       - name: Testing 
         run: npm run test
